@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   get '/auth/twitter/callback', to: 'sessions#callback'
 
+  resources :comments
+
 end
