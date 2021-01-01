@@ -4,9 +4,9 @@ const initState = {
 }
 
 const cryptosReducer = (state = initState, action) => {
-    switch(action.tyep){
+    switch(action.type){
         case "FETCH_TRENDING":
-            return {...state}
+            return {...state, trending: action.payload.trending}
         default:
             return {...state}
     }
