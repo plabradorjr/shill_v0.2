@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import {loadCryptos} from './actions/cryptosAction';
+import React from 'react';
+import Home from './pages/Home';
 
 function App() {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadCryptos());
-  });
-
+  
   return (
     <div className='app'>
       Hello woyld
+      <Home />
     </div>
   )
 
