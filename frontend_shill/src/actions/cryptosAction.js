@@ -1,7 +1,7 @@
 import axios from "axios";
 import {trendingCryptosURL} from "../api";
 
-export const loadCryptos = () => async (dispatch) => {
+export const loadTrendingCryptos = () => async (dispatch) => {
 
     const trendingCryptos = await axios.get(trendingCryptosURL());
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import {loadCryptos} from '../actions/cryptosAction';
+import {loadTrendingCryptos} from '../actions/cryptosAction';
 //COMPONENTS
 import Crypto from '../components/Crypto';
 //STYLING AND ANIMATIONS
@@ -13,7 +13,7 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadCryptos());
+    dispatch(loadTrendingCryptos());
   },[dispatch]);
 
   const trendingCryptoList = useSelector((state) => state.cryptos.trending);
