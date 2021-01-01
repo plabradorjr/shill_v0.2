@@ -15,3 +15,5 @@ const Crypto = ({name, symbol, image_url}) => {
 }
 
 export default Crypto;
+
+//test
