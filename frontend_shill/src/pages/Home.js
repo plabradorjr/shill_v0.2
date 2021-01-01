@@ -45,7 +45,7 @@ const CryptoList = styled(motion.div)`
 
 const Cryptos = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
 `

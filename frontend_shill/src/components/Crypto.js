@@ -7,7 +7,7 @@ import {motion} from 'framer-motion';
 const Crypto = ({name, symbol, image_url}) => {
     return (
         <StyledCrypto>
-            <h2>{name}</h2>
+            <h3>{name}</h3>
             <p>{symbol}</p>
             <img src={image_url} alt={name}></img>
         </StyledCrypto>
@@ -21,7 +21,7 @@ const StyledCrypto = styled(motion.div)`
     img {
         width: 100%;
         object-fit: cover;
-        border-radius: 1rem
+        border-radius: 1rem;
     }
 `
 
