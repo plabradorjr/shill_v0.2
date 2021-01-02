@@ -3,8 +3,8 @@ import cryptosReducer from './cryptosReducer';
 import detailReducer from './detailReducer';
 
 const rootReducer = combineReducers({
-    cryptos: cryptosReducer,
-    detail: detailReducer
+    trendingCryptos: cryptosReducer,
+    detailedCoin: detailReducer
 })
 
 export default rootReducer;

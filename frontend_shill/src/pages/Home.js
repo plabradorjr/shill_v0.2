@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {loadTrendingCryptos} from '../actions/cryptosAction';
 //COMPONENTS
 import Crypto from '../components/Crypto';
+import Price from '../components/Price';
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
@@ -16,13 +17,14 @@ function Home() {
     dispatch(loadTrendingCryptos());
   },[dispatch]);
 
-  const trendingCryptoList = useSelector((state) => state.cryptos.trending);
+  const trendingCryptoList = useSelector((state) => state.trendingCryptos.trending);
 
   return (
       <CryptoList>
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos>
             {trendingCryptoList.map((coin) => (
+              <div>
                 <Crypto 
                   name={coin.item.name} 
                   symbol={coin.item.symbol} 
@@ -30,6 +32,8 @@ function Home() {
                   key={coin.item.id}
                   id={coin.item.id}
                 />
+                <Price id={coin.item.id}/>
+              </div>
             ))}
           </Cryptos>
       </CryptoList>
