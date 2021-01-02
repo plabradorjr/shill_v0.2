@@ -1,9 +1,12 @@
-const initialState = { coin: {} }
+const initialState = { price: {} }
 
 const detailReducer = (state = initialState, action ) => {
     switch(action.type){
         case "GET_DETAIL":
-            return {...state, coin: action.payload.coin}
+            return {...state,
+                price: action.payload.price,
+                twitter: action.payload.twitter,
+                }
         default:
             return {...state}
     }

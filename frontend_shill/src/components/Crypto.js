@@ -2,11 +2,19 @@ import React from 'react';
 //Styling and animations
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+//Redux
+import {useDispatch} from 'react-redux';
+import {loadCoinDetail} from '../actions/detailActions';
 
+const Crypto = ({name, symbol, image_url, id}) => {
+    //Load Detail
+    const dispatch = useDispatch();
+    const loadDetailHandler = () => {
+        dispatch(loadCoinDetail(id))
+    }
 
-const Crypto = ({name, symbol, image_url}) => {
     return (
-        <StyledCrypto>
+        <StyledCrypto onClick={loadDetailHandler}>
             <h3>{name}</h3>
             <p>{symbol}</p>
             <img src={image_url} alt={name}></img>
