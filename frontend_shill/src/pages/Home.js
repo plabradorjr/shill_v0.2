@@ -8,8 +8,13 @@ import CoinDetail from '../components/CoinDetails'
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import {useLocation} from 'react-router-dom';
+
 
 function Home() {
+  //get the current location
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
 
   const dispatch = useDispatch();
 
@@ -21,7 +26,7 @@ function Home() {
 
   return (
       <CryptoList>
-          <CoinDetail />
+          {pathId && <CoinDetail />}
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos>
             {trendingCryptoList.map((coin) => (
@@ -52,6 +57,7 @@ const Cryptos = styled(motion.div)`
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
+  cursor: pointer;
 `
 
 export default Home;

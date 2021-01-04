@@ -8,9 +8,10 @@ import {useSelector} from 'react-redux';
 const CoinDetail = () => {
 
     //data
-    const detailedCoin = useSelector((state) => state.coin.detailedCoin);
+    const {detailedCoin, isLoading} = useSelector((state) => state.coin);
 
     return(
+        <>{!isLoading && (
         <CardShadow>
             <CardDetail>
                 <div className="stats">
@@ -26,6 +27,9 @@ const CoinDetail = () => {
                 </div>
             </CardDetail>
         </CardShadow>
+        )}
+        
+        </>
     )
 }
 

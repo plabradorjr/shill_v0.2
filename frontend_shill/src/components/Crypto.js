@@ -5,6 +5,7 @@ import {motion} from 'framer-motion';
 //Redux
 import {useDispatch} from 'react-redux';
 import {loadCoinDetail} from '../actions/detailActions';
+import {Link} from 'react-router-dom';
 
 const Crypto = ({name, symbol, image_url, id}) => {
     //Load Detail
@@ -15,9 +16,11 @@ const Crypto = ({name, symbol, image_url, id}) => {
 
     return (
         <StyledCrypto onClick={loadDetailHandler}>
-            <h3>{name}</h3>
-            <p>{symbol}</p>
-            <img src={image_url} alt={name}></img>
+            <Link to={`/coin/${id}`}>
+                <h3>{name}</h3>
+                <p>{symbol}</p>
+                <img src={image_url} alt={name}></img>
+            </Link>
         </StyledCrypto>
     )
 }
