@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {loadTrendingCryptos} from '../actions/cryptosAction';
 //COMPONENTS
 import Crypto from '../components/Crypto';
-import Price from '../components/Price';
+import CoinDetail from '../components/CoinDetails'
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
@@ -21,6 +21,7 @@ function Home() {
 
   return (
       <CryptoList>
+          <CoinDetail />
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos>
             {trendingCryptoList.map((coin) => (
@@ -32,7 +33,6 @@ function Home() {
                   key={coin.item.id}
                   id={coin.item.id}
                 />
-                <Price id={coin.item.id}/>
               </div>
             ))}
           </Cryptos>

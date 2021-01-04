@@ -35,4 +35,3 @@ const StyledCrypto = styled(motion.div)`
 
 export default Crypto;
 
-//test

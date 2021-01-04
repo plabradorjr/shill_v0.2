@@ -1,4 +1,4 @@
-const initialState = { detailedCoin: [] }
+const initialState = { detailedCoin: {} }
 
 const detailReducer = (state = initialState, action ) => {
     switch(action.type){
