@@ -7,7 +7,7 @@ import Crypto from '../components/Crypto';
 import CoinDetail from '../components/CoinDetails'
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import {motion, AnimatePresence, AnimateSharedLayout} from 'framer-motion';
 import {useLocation} from 'react-router-dom';
 
 
@@ -26,7 +26,7 @@ function Home() {
 
   return (
       <CryptoList>
-          {pathId && <CoinDetail />}
+           {pathId && <CoinDetail />}
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos>
             {trendingCryptoList.map((coin) => (

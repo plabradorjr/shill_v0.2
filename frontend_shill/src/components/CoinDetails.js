@@ -4,16 +4,27 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 //redux
 import {useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 const CoinDetail = () => {
+
+    const history = useHistory();
+
+    //exit detail
+    const exitDetailHandler = (e) => {
+        const element = e.target;
+        if(element.classList.contains('shadow')){
+            history.push('/')
+        }
+    }
 
     //data
     const {detailedCoin, isLoading} = useSelector((state) => state.coin);
 
     return(
         <>{!isLoading && (
-        <CardShadow>
-            <CardDetail>
+        <CardShadow className="shadow" onClick={exitDetailHandler}>
+            <CardDetail >
                 <div className="stats">
                     <div className="rating">
                         <h3>{detailedCoin.name}</h3>
