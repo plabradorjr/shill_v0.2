@@ -48,6 +48,7 @@ yarn-debug.log*
 # dependencies
 frontend_shill/node_modules
 frontend_shill/.pnp
+frontend_shill/.eslintcache
 .pnp.js
 
 # testing
