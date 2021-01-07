@@ -13,6 +13,7 @@ const CoinDetail = () => {
 
     //exit detail
     const exitDetailHandler = (e) => {
+        document.getElementById("srch").classList.toggle("invisible");
         const element = e.target;
         if(element.classList.contains('shadow')){
             history.push('/')

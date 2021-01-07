@@ -8,6 +8,7 @@ import CoinDetail from '../components/CoinDetails'
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
 import {useLocation} from 'react-router-dom';
+import Search from '../components/Search';
 
 
 function Home() {
@@ -26,7 +27,10 @@ function Home() {
   const trendingCryptoList = useSelector((state) => state.trendingCryptos.trending);
 
   return (
-      <CryptoList className="container">
+      <div className="container">
+      <br></br>
+      <Search />
+      <CryptoList className="row">
            {pathId && <CoinDetail />}
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos >
@@ -43,6 +47,8 @@ function Home() {
             ))}
           </Cryptos>
       </CryptoList>
+      
+      </div>
   )
 }
 
