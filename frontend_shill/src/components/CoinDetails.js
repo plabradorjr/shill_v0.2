@@ -1,7 +1,6 @@
 import React from 'react';
 //Styling and animations
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
 //redux
 import {useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
@@ -13,9 +12,10 @@ const CoinDetail = () => {
 
     //exit detail
     const exitDetailHandler = (e) => {
-        document.getElementById("srch").classList.toggle("invisible");
+        
         const element = e.target;
         if(element.classList.contains('shadow')){
+            document.getElementById("srch").classList.toggle("invisible");
             history.push('/')
         }
     }
@@ -39,7 +39,7 @@ const CoinDetail = () => {
                                 </div>
                             </div>
                             <div className="media">
-                                <img src={detailedCoin.image.large}></img>
+                                <img src={detailedCoin.image.large} alt={detailedCoin.name}></img>
                                 <br></br>
                             </div>
                         </div>
