@@ -15,14 +15,19 @@ const Crypto = ({name, symbol, image_url, id}) => {
     }
 
     return (
-        <StyledCrypto onClick={loadDetailHandler}>
-            <Link to={`/coin/${id}`}>
-                <h3>{name}</h3>
-                <p>{symbol}</p>
-                <img src={image_url} alt={name}></img>
-                
-            </Link>
-        </StyledCrypto>
+        <div className="cointiner">
+            <div className="row"> 
+                <StyledCrypto onClick={loadDetailHandler}>
+                    <Link to={`/coin/${id}`}>
+                        <h3>{name}</h3>
+                        <p>$ {symbol}</p>
+                        <img src={image_url} alt={name}></img>
+                        
+                    </Link>
+                </StyledCrypto>
+            </div>
+        </div>
+        
     )
 }
 

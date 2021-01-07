@@ -24,23 +24,34 @@ const CoinDetail = () => {
 
     return(
         <>{!isLoading && (
-        <CardShadow className="shadow" onClick={exitDetailHandler}>
-            <CardDetail >
-                <div className="stats">
-                    <div className="rating">
-                        <h3>{detailedCoin.name}</h3>
-                    </div>
-                    <div className="info">
-                        <h3>Price: ${detailedCoin.market_data.current_price.usd} (USD)</h3>
-                    </div>
-                </div>
-                <div className="media">
-                    <img src={detailedCoin.image.large}></img>
-                </div>
-                <PriceChart data={historicalData} />
-            </CardDetail>
             
-        </CardShadow>
+            <CardShadow className="shadow" onClick={exitDetailHandler}>
+                <div className="container">
+                    <CardDetail className="row mt-5 rounded p-3" >
+                        <div>
+                            <div className="stats">
+                                <div className="rating">
+                                    <h2>{detailedCoin.name}</h2>
+                                </div>
+                                <div className="info">
+                                    <h3>Price: ${detailedCoin.market_data.current_price.usd} (USD)</h3>
+                                </div>
+                            </div>
+                            <div className="media">
+                                <img src={detailedCoin.image.large}></img>
+                                <br></br>
+                            </div>
+                        </div>
+                        
+                        <PriceChart className="container" data={historicalData} />
+
+                    </CardDetail>
+
+                </div>
+                
+            </CardShadow>
+
+        
         
         )}
         
@@ -48,27 +59,21 @@ const CoinDetail = () => {
     )
 }
 
-const CardShadow = styled(motion.div)`
+const CardShadow = styled.div`
 
     width: 100%;
     min-height: 100vh;
     overflow-y: scroll;
-    background: rgba(0,0,0,0.6);
+    background: #2f3542;
     position: fixed;
     top: 0;
     left: 0;
 
 `;
 
-const CardDetail = styled(motion.div)`
+const CardDetail = styled.div`
 
-    width: 80%;
-    border-radius: 1rem;
-    padding: 2rem 20rem;
-    background: white;
-    position: absolute;
-    left: 10%;
-    color: black;
+    background-color: #1e272e;
 
 `;
 

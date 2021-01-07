@@ -20,29 +20,31 @@ const GlobalStyles = createGlobalStyle`
     body{
         font-family: 'Montserrat', sans-serif;
         width: 100%;
+        background-color: #353b48;
     }
     h2{
         font-size: 3rem;
         font-family: 'Abril Fatface', cursive;
         font-weight: lighter;
-        color: #333;
+        color: #f5f6fa;
     }
     h3{
         font-size: 1rem;
-        color: #333;
+        color: #f5f6fa;
         padding: 1.5rem 0rem;
     }
     p{
         font-size: 1rem;
         line-height: 200%;
-        color: #696969;
+        color: #f5f6fa;
     }
     a{
         text-decoration: none;
-        color: #333;
+        color: #f5f6fa;
     }
     img{
         display: block;
+        border-radius: 1rem;
     }
     input{
         font-weight: bold;

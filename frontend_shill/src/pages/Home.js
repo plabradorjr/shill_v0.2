@@ -7,7 +7,6 @@ import Crypto from '../components/Crypto';
 import CoinDetail from '../components/CoinDetails'
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
-import {motion, AnimatePresence, AnimateSharedLayout} from 'framer-motion';
 import {useLocation} from 'react-router-dom';
 
 
@@ -25,7 +24,7 @@ function Home() {
   const trendingCryptoList = useSelector((state) => state.trendingCryptos.trending);
 
   return (
-      <CryptoList>
+      <CryptoList className="container">
            {pathId && <CoinDetail />}
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos >
@@ -45,17 +44,16 @@ function Home() {
   )
 }
 
-const CryptoList = styled(motion.div)`
-  padding: 0rem 5rem;
+const CryptoList = styled.div`
   h2 {
     padding: 1rem 0rem;
   }
 `
 
-const Cryptos = styled(motion.div)`
+const Cryptos = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  grid-column-gap: 1rem;
+  grid-column-gap: 2rem;
   grid-row-gap: 1rem;
   cursor: pointer;
 `
