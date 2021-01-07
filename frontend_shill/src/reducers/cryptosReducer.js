@@ -19,6 +19,11 @@ const cryptosReducer = (state = initState, action) => {
                 ...state,
                 searched: action.payload.searched
             }
+        case "DELETE_SEARCH":
+            return {
+                ...state,
+                searched: []
+            }
         default:
             return {...state}
     }

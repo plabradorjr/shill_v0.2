@@ -36,3 +36,11 @@ export const loadSearchedCrypto = (res) => (dispatch) =>{
     })
 
 }
+
+
+export const deleteSearchResults = () => (dispatch) => {
+
+    dispatch({
+        type: "DELETE_SEARCH"
+    })
+}

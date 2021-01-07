@@ -25,7 +25,6 @@ const Search = () => {
     const ts = new TrieSearch('name');
     ts.addAll(allCoins);
 
-
     const submitSearch = (e) => {
         e.preventDefault();
         // console.log(textInput);
@@ -36,8 +35,8 @@ const Search = () => {
         setTextInput("");
     };
 
-    // const location = useLocation();
-    // const pathId = location.pathname.split("/")[2];
+    const location = useLocation();
+    const pathId = location.pathname.split("/")[2];
     
 
 
@@ -63,11 +62,9 @@ const Search = () => {
             <div className="row">
                 <div className="col">
                     <CryptoList className="row">
-                        {/* {pathId && <CoinDetail />} */}
+                        {pathId && <CoinDetail />}
                         <div className="d-flex justify-content-center">
-                            <button type="button" className="btn btn-danger btn-sm btn-block mb-4">Delete Search</button>
                         </div>
-                        <h3 className="d-flex justify-content-center">Search Results</h3>
                         <Cryptos >
                         {searched.map((coin) => (
                         <div key={coin.id}>

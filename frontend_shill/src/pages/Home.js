@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import {loadTrendingCryptos, loadAllCoins} from '../actions/cryptosAction';
+import {loadTrendingCryptos, loadAllCoins, deleteSearchResults} from '../actions/cryptosAction';
 //COMPONENTS
 import Crypto from '../components/Crypto';
 import CoinDetail from '../components/CoinDetails'
@@ -23,32 +23,37 @@ function Home() {
     dispatch(loadAllCoins());
   },[dispatch]);
 
+  const deleteSearch = () => {
+    dispatch(deleteSearchResults());
+  }
 
   const trendingCryptoList = useSelector((state) => state.trendingCryptos.trending);
 
   return (
       <div className="container">
-      <br></br>
-      <CryptoList className="row">
-           {pathId && <CoinDetail />}
-          <h2>Trending Searches from Coingecko</h2>
-          <Cryptos >
-            {trendingCryptoList.map((coin) => (
-              <div key={coin.item.id}>
-                <Crypto 
-                  name={coin.item.name} 
-                  symbol={coin.item.symbol} 
-                  image_url={coin.item.large}
-                  key={coin.item.id}
-                  id={coin.item.id}
-                />
-              </div>
-            ))}
-          </Cryptos>
-      </CryptoList>
-      <br></br>
-      <Search />
-
+        <br></br>
+        <CryptoList className="row">
+            {pathId && <CoinDetail />}
+            <h2 onClick={deleteSearch}>Trending Searches from Coingecko</h2>
+            <Cryptos >
+              {trendingCryptoList.map((coin) => (
+                <div key={coin.item.id}>
+                  <Crypto 
+                    name={coin.item.name} 
+                    symbol={coin.item.symbol} 
+                    image_url={coin.item.large}
+                    key={coin.item.id}
+                    id={coin.item.id}
+                  />
+                </div>
+              ))}
+            </Cryptos>
+        </CryptoList>
+        <br></br>
+        <div className="row">
+          <Search />
+        </div>
+        
       
       </div>
   )
@@ -57,6 +62,7 @@ function Home() {
 const CryptoList = styled.div`
   h2 {
     padding: 1rem 0rem;
+    cursor: pointer;
   }
 `
 
