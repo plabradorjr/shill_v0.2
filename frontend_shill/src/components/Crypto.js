@@ -20,10 +20,10 @@ const Crypto = ({name, symbol, image_url, id}) => {
         <div className="cointiner">
             <div className="row"> 
                 <StyledCrypto onClick={loadDetailHandler}>
-                    <Link to={`/trending/${id}`}>
+                    <Link to={`/coin/${id}`}>
                         <h3>{name}</h3>
                         <p>$ {symbol}</p>
-                        <img src={image_url} alt={name}></img>
+                        {image_url && <img src={image_url} alt={name}></img>}
                         
                     </Link>
                     <br></br>

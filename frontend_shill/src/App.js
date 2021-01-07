@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='app'>
       <GlobalStyles />
-      <Route path={["/trending/:id", "/"]}>
+      <Route path={["/coin/:id", "/"]}>
         <Home />
       </Route>
     </div>
