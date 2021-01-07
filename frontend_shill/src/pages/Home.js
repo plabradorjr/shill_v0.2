@@ -28,7 +28,7 @@ function Home() {
       <CryptoList>
            {pathId && <CoinDetail />}
           <h2>Trending Searches from Coingecko</h2>
-          <Cryptos>
+          <Cryptos >
             {trendingCryptoList.map((coin) => (
               <div>
                 <Crypto 

@@ -8,6 +8,8 @@ const initialState = { detailedCoin: {
                                 usd:[]
                             }}
                         },
+                        
+                        historicalData: [],
                         isLoading: true,
                     }
 
@@ -17,6 +19,7 @@ const detailReducer = (state = initialState, action ) => {
             return {
                 ...state,
                 detailedCoin: action.payload.detailedCoin,
+                historicalData: action.payload.historicalData,
                 isLoading: false,
             };
         case "LOADING_DETAIL":

@@ -20,6 +20,7 @@ const Crypto = ({name, symbol, image_url, id}) => {
                 <h3>{name}</h3>
                 <p>{symbol}</p>
                 <img src={image_url} alt={name}></img>
+                
             </Link>
         </StyledCrypto>
     )

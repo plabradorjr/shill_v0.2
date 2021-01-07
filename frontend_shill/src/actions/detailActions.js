@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {coinDetailsURL} from '../api';
+import {coinDetailsURL, coinHistoricalDataURL} from '../api';
 
 
 export const loadCoinDetail = (id) => async (dispatch) => {
@@ -9,11 +9,13 @@ export const loadCoinDetail = (id) => async (dispatch) => {
     });
 
     const detailedCoinData = await axios.get(coinDetailsURL(id))
+    const historicalData = await axios.get(coinHistoricalDataURL(id))
 
     dispatch({
         type: "GET_DETAIL",
         payload: {
-            detailedCoin: detailedCoinData.data
+            detailedCoin: detailedCoinData.data,
+            historicalData: historicalData.data
         }
         
     })

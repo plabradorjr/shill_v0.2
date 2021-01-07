@@ -5,6 +5,7 @@ import {motion} from 'framer-motion';
 //redux
 import {useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import PriceChart from './PriceChart';
 
 const CoinDetail = () => {
 
@@ -19,7 +20,7 @@ const CoinDetail = () => {
     }
 
     //data
-    const {detailedCoin, isLoading} = useSelector((state) => state.coin);
+    const {detailedCoin, isLoading, historicalData} = useSelector((state) => state.coin);
 
     return(
         <>{!isLoading && (
@@ -36,8 +37,11 @@ const CoinDetail = () => {
                 <div className="media">
                     <img src={detailedCoin.image.large}></img>
                 </div>
+                <PriceChart data={historicalData} />
             </CardDetail>
+            
         </CardShadow>
+        
         )}
         
         </>
