@@ -16,6 +16,10 @@ const PriceChart = ({data}) => {
     title: {
         text: ''
     },
+    
+    credits: {
+        enabled: false,
+    },
 
     series: [{
         type: 'candlestick',
