@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import TrieSearch from 'trie-search';
 import {loadSearchedCrypto} from '../actions/cryptosAction';
@@ -29,7 +29,6 @@ const Search = () => {
         e.preventDefault();
         // console.log(textInput);
         let results = ts.get(textInput);
-        console.log(results);
         
         dispatch(loadSearchedCrypto(results));
         setTextInput("");
