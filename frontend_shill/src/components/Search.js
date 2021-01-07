@@ -1,42 +1,54 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import TrieSearch from 'trie-search';
+import {loadSearchedCrypto} from '../actions/cryptosAction';
 
+const Search = () => {
 
-class Search extends Component {
-    constructor(props){
-        super(props);
+    const { allCoins, searched } = useSelector((state) => state.trendingCryptos)
 
-        this.state= {
-            query: ""
-        }
+    const dispatch = useDispatch();
+    const [textInput, setTextInput] = useState("");
+
+    const inputHandler = (e) => {
+        setTextInput(e.target.value);
+    };
+
+    const ts = new TrieSearch('name');
+    ts.addAll(allCoins);
+
+    const showSearchResults = (results) => {
+        
     }
 
 
-    inputHandler = (e) => {
-        this.setState({
-            query: e.target.value
-        })
-    }
-
-    handleSubmit = (e) => {
+    const submitSearch = (e) => {
         e.preventDefault();
-        console.log(this.state.query)
-    }
+        // console.log(textInput);
+        let results = ts.get(textInput);
+        console.log(results);
+        
+        dispatch(loadSearchedCrypto(results));
+        setTextInput("");
+    };
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit} className="input-group mb-3" id="srch">
-                <input 
-                    onChange={this.inputHandler}
-                    type="text" 
-                    className="form-control" 
-                    aria-describedby="basic-addon2">
-                </input>
-                <div  className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="submit" >Search Crypto</button>
-                </div>
-            </form>
-        )
-    }
+    
+
+
+    return (
+        <form onSubmit={submitSearch} className="input-group mb-3" id="srch">
+            <input 
+                onChange={inputHandler}
+                value={textInput}
+                type="text" 
+                className="form-control" 
+                aria-describedby="basic-addon2">
+            </input>
+            <div  className="input-group-append">
+                <button className="btn btn-outline-secondary" type="submit" >Search Crypto</button>
+            </div>
+        </form>
+    )
 
 }
 

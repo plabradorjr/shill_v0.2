@@ -14,7 +14,7 @@ const cryptosReducer = (state = initState, action) => {
             return {...state,
                 allCoins: action.payload.allCoins
             }
-        case "FETCH_SEARCHED":
+        case "UPDATE_SEARCH_RESULTS":
             return {
                 ...state,
                 searched: action.payload.searched

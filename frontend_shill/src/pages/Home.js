@@ -29,13 +29,12 @@ function Home() {
   return (
       <div className="container">
       <br></br>
-      <Search />
       <CryptoList className="row">
            {pathId && <CoinDetail />}
           <h2>Trending Searches from Coingecko</h2>
           <Cryptos >
             {trendingCryptoList.map((coin) => (
-              <div>
+              <div key={coin.item.id}>
                 <Crypto 
                   name={coin.item.name} 
                   symbol={coin.item.symbol} 
@@ -47,6 +46,9 @@ function Home() {
             ))}
           </Cryptos>
       </CryptoList>
+      <br></br>
+      <Search />
+
       
       </div>
   )

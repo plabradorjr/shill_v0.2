@@ -25,3 +25,14 @@ export const loadAllCoins = () => async (dispatch) => {
         }
     })
 }
+
+export const loadSearchedCrypto = (res) => (dispatch) =>{
+
+    dispatch({
+        type: "UPDATE_SEARCH_RESULTS",
+        payload: {
+            searched: res
+        }
+    })
+
+}
