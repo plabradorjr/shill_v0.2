@@ -1,6 +1,5 @@
 import axios from "axios";
-import {trendingCryptosURL} from "../api";
-import {coinDetailsURL} from '../api'
+import { allCoinsURL, trendingCryptosURL } from "../api";
 
 export const loadTrendingCryptos = () => async (dispatch) => {
 
@@ -12,5 +11,17 @@ export const loadTrendingCryptos = () => async (dispatch) => {
             trending: trendingCryptos.data.coins
         }
     })
+}
 
+
+export const loadAllCoins = () => async (dispatch) => {
+
+    const allCoins = await axios.get(allCoinsURL());
+
+    dispatch({
+        type: "FETCH_ALL_COINS",
+        payload: {
+            allCoins: allCoins.data
+        }
+    })
 }
