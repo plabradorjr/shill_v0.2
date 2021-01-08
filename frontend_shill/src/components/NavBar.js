@@ -18,20 +18,23 @@ const NavBar = () => {
         e.preventDefault();
     }
 
-    const handleLoginClick = () => {
-        window.location.replace('http://localhost:3030/auth/twitter')
+    const handleLoginClick = (e) => {
+        window.location = 'http://localhost:3030/auth/twitter'
     }
 
     return (
-        <div className="container">
-            <p>Username: {user.name}</p>
-            <p>{!user.is_logged && "not logged in"}</p>
-            <div className="col-12">
-                    <button onClick={handleLoginClick}>Login with Twitter</button>
-                    <button onClick={handleLogoutClick}>LOG OUT</button>
+        <>
+        <nav className="navbar navbar-light bg-dark justify-content-between px-5">
+            <p>✨ Shill.lol ✨</p>
+            {user.is_logged && <p>Hello,  {user.name}</p>}
 
-            </div>
-        </div>
+            <form className="form-inline">
+                {user.is_logged && <button className="btn btn-outline-light my-2 my-sm-0" type="button" onClick={handleLogoutClick}>Logout</button>}
+                {!user.is_logged && <button className="btn btn-outline-light my-2 my-sm-0" type="button" onClick={handleLoginClick}>Login via Twitter</button>}
+                
+            </form>
+        </nav>
+        </>
     )
 
 }

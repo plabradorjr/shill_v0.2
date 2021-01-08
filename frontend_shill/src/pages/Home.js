@@ -37,7 +37,8 @@ function Home() {
         <br></br>
         <CryptoList className="row">
             {pathId && <CoinDetail />}
-            <h2 onClick={deleteSearch}>Trending Searches from Coingecko</h2>
+            <h2 onClick={deleteSearch}>Trending Searches</h2>
+            <small className="text-white pb-4">* from CoinGecko API</small>
             <Cryptos >
               {trendingCryptoList.map((coin) => (
                 <div key={coin.item.id}>
