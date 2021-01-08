@@ -11,8 +11,8 @@ const Crypto = ({name, symbol, image_url, id}) => {
     //Load Detail
     const dispatch = useDispatch();
     const loadDetailHandler = () => {
-        var srch = document.getElementById("srch");
-        srch.classList.toggle("invisible");
+        document.getElementById("srch").classList.toggle("invisible");
+        document.getElementById("tradingview").classList.toggle("invisible");
         dispatch(loadCoinDetail(id))
     }
 

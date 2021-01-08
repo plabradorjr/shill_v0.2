@@ -23,9 +23,8 @@ const GlobalStyles = createGlobalStyle`
         background-color: #353b48;
     }
     h2{
-        font-size: 3rem;
-        font-family: 'Abril Fatface', cursive;
-        font-weight: lighter;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
         color: #f5f6fa;
     }
     h3{
@@ -35,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
     }
     p{
         font-size: 1rem;
-        line-height: 200%;
+        line-height: 100%;
         color: #f5f6fa;
     }
     a{
@@ -48,7 +47,7 @@ const GlobalStyles = createGlobalStyle`
     }
     input{
         font-weight: bold;
-    font-family: "Montserrat", sans-serif;
+        font-family: "Montserrat", sans-serif;
     }
 `;
 

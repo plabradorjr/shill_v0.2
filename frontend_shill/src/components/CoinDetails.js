@@ -16,6 +16,8 @@ const CoinDetail = () => {
         const element = e.target;
         if(element.classList.contains('shadow')){
             document.getElementById("srch").classList.toggle("invisible");
+            document.getElementById("tradingview").classList.toggle("invisible");
+
             history.push('/')
         }
     }

@@ -4,12 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import {loadTrendingCryptos, loadAllCoins, deleteSearchResults} from '../actions/cryptosAction';
 //COMPONENTS
 import Crypto from '../components/Crypto';
-import CoinDetail from '../components/CoinDetails'
+import CoinDetail from '../components/CoinDetails';
+import TradingView from '../components/TradingView';
+import NavBar from '../components/NavBar';
+import Search from '../components/Search';
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
 import {useLocation} from 'react-router-dom';
-import Search from '../components/Search';
-import NavBar from '../components/NavBar';
+
+
+
 
 
 function Home() {
@@ -58,6 +62,20 @@ function Home() {
           <Search />
         </div>
       </div>
+      <div className="container pt-5" id="tradingview">
+        <div className="row">
+          <ChartStyled >
+              <h2>Bitcoin</h2>
+              <TradingView ticker={"COINBASE:BTCUSD"} />
+           </ ChartStyled>
+          <ChartStyled >
+            <h2>Ethereum</h2>
+            <TradingView ticker={"COINBASE:ETHUSD"} />
+          </ ChartStyled>
+        
+        </div>
+      </div>
+      
       </>
   )
 }
@@ -75,6 +93,13 @@ const Cryptos = styled.div`
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
   cursor: pointer;
+`
+
+const ChartStyled = styled.div`
+  width: 50%;
+  height: 500px;
+  margin-bottom: 200px;
+  margin-top: 50px;
 `
 
 export default Home;
