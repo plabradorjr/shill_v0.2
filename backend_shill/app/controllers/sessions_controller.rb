@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id 
             render json: {
                 status: :created,
-                logged_in: true,
+                is_logged: true,
                 user: user 
             }
         else
@@ -18,14 +18,17 @@ class SessionsController < ApplicationController
     end
 
     def logged_in
+
         if @current_user
             render json: {
-                logged_in: true,
-                user: @current_user
+                is_logged: true,
+                name: @current_user.name,
+                image_url: @current_user.image_url,
+                twitter_link: @current_user.username
             }
         else
             render json: {
-                logged_in: false
+                is_logged: false
             }
         end
     end
@@ -45,11 +48,14 @@ class SessionsController < ApplicationController
         if user = User.find_by(:uid => twitter_uid)
             user.update(image_url: twitter_image_url, name: twitter_name, username: twitter_username)
             session[:user_id] = user.id 
-            render json: {
-                status: :created,
-                logged_in: true,
-                user: user 
-            }
+            # render json: {
+            #     status: :created,
+            #     is_logged: true,
+            #     name: user.name,
+            #     image_url: user.image_url,
+            #     twitter_link: user.username
+            # }
+            redirect_to 'http://localhost:3000'
         else
             user = User.create!(
                 uid: twitter_uid,
@@ -58,16 +64,19 @@ class SessionsController < ApplicationController
                 image_url: twitter_image_url,
                 password: SecureRandom.hex
             )
-            if user
-                session[:user_id] = user.id
-                render json: {
-                    status: :created,
-                    user: user
-                }
-            else
-                render json: { status: 500 }
-            end
-
+                if user
+                    session[:user_id] = user.id
+                    # render json: {
+                    #     status: :created,
+                    #     is_logged: true,
+                    #     name: user.name,
+                    #     image_url: user.image_url,
+                    #     twitter_link: user.username
+                    # }
+                    redirect_to 'http://localhost:3000'
+                else
+                    render json: { status: 500 }
+                end
         end
     end
 

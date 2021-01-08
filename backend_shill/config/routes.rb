@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   post '/auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
-  delete 'signout', to: 'sessions#destroy', as: 'signout'
+  # delete 'logout', to: 'sessions#destroy'
 
   get '/auth/twitter/callback', to: 'sessions#callback'
 

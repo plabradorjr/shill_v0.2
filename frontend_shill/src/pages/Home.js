@@ -9,6 +9,7 @@ import CoinDetail from '../components/CoinDetails'
 import styled from 'styled-components';
 import {useLocation} from 'react-router-dom';
 import Search from '../components/Search';
+import NavBar from '../components/NavBar';
 
 
 function Home() {
@@ -30,6 +31,8 @@ function Home() {
   const trendingCryptoList = useSelector((state) => state.trendingCryptos.trending);
 
   return (
+      <>
+      <NavBar />
       <div className="container">
         <br></br>
         <CryptoList className="row">
@@ -53,9 +56,8 @@ function Home() {
         <div className="row">
           <Search />
         </div>
-        
-      
       </div>
+      </>
   )
 }
 

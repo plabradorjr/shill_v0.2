@@ -1,15 +1,33 @@
 const initState = {
-    name: "",
-    image_url: "",
-    is_logged: false,
-    twitter_link: ""
+    
+    currentUser: {
+        name: "",
+        image_url: "",
+        twitter_link: "",
+        is_logged: false,
+    }
 }
 
 const userReducer = (state = initState, action) => {
     switch(action.type){
-        case "LOGIN_USER":
-            return {...state}
+        case "FETCH_CURRENT_USER":
+            return {
+                ...state,
+                currentUser: action.payload.currentUser
+            }
+        case "LOGOUT":
+            return {
+                ...state,
+                currentUser: {
+                    name: "",
+                    image_url: "",
+                    twitter_link: "",
+                    is_logged: false,
+                }
+            }
         default:
             return {...state}
     }
 }
+
+export default userReducer;
