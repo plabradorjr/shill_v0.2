@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    include CurrentUserConcern
 
     def index
         @comments = Comment.all
@@ -14,15 +15,24 @@ class CommentsController < ApplicationController
     end
 
     def create
-        if @current_user
-            @comment = Comment.new(comment_params)
-            @comment.username = @current_user.username
-            @comment.save
-        else
-            render json: {
-                is_logged: false
-            }
-        end
+            if @current_user
+                @comment = Comment.new(comment_params)
+                @comment.user = @current_user
+                @comment.username = @current_user.username
+                if @comment.save
+                    render json: {
+                        status: "success"
+                    }
+                else
+                    render json: {
+                        status: "failed to save comment"
+                    }
+                end
+            else
+                render json: {
+                    status: "failed to save comment"
+                }
+            end
     end
 
     private

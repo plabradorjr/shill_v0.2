@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import {useLocation} from 'react-router-dom';
+import axios from 'axios';
 //styles
 
 const PostComment = () => {
@@ -14,10 +15,29 @@ const PostComment = () => {
 
 
     const submitSearch = (e) => {
-        e.preventDefault();
-        console.log(textInput);
         
-        setTextInput("");
+        axios
+            .post(
+                "http://localhost:3030/comments",
+                {
+                    comment: {
+                        comment: textInput
+                    }
+                },
+                { withCredentials: true }
+            )
+            .then(res => {
+                if (res.data.status === "success") {
+                    console.log("comment went to rails woot")
+                }
+            })
+            .catch(err => {
+                console.log("posting comment error", err)
+            });
+
+        setTextInput("");    
+        e.preventDefault();
+        
     };
 
     return (
@@ -25,19 +45,18 @@ const PostComment = () => {
             <div className="row"> 
                 <div className="col-12">
                     <form onSubmit={submitSearch} className="input-group mb-3" >
-                        <input 
+                        <textarea 
                             onChange={inputHandler}
                             value={textInput}
                             type="text" 
                             className="form-control" 
                             aria-describedby="basic-addon2">
-                        </input>
+                        </textarea>
                         <div  className="input-group-append">
-                            <button className="btn btn-outline-secondary" type="submit" >Submit Comment</button>
+                            <button className="btn btn-outline-secondary btn-block p-4" type="submit" >Submit Comment</button>
                         </div>
                     </form>
                 </div>
-                
             </div>
           
         </div>

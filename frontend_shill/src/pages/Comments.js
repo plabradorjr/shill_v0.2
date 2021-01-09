@@ -10,7 +10,7 @@ const Comments = () => {
     return (
         <div>
             <Link to="/">Back to Home</Link>
-            <br></br>
+
             <PostComment />
         </div>
     )
