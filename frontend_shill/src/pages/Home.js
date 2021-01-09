@@ -22,17 +22,17 @@ function Home() {
   const pathId = location.pathname.split("/")[2];
 
   const dispatch = useDispatch();
+  const {trending, allCoins} = useSelector((state) => state.trendingCryptos);
 
   useEffect(() => {
     dispatch(loadTrendingCryptos());
     if (allCoins.length < 1) dispatch(loadAllCoins());
-  },[dispatch]);
+  },[dispatch, allCoins]);
 
   const deleteSearch = () => {
     dispatch(deleteSearchResults());
   }
 
-  const {trending, allCoins} = useSelector((state) => state.trendingCryptos);
 
   return (
       <>

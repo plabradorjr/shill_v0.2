@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     def index
         @comments = Comment.all
         render json: @comments, status: 200
-
     end
 
     def show
@@ -15,10 +14,15 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = Comment.new(comment_params)
-        @comment.username = @current_user.username
-        @comment.save
-
+        if @current_user
+            @comment = Comment.new(comment_params)
+            @comment.username = @current_user.username
+            @comment.save
+        else
+            render json: {
+                is_logged: false
+            }
+        end
     end
 
     private
