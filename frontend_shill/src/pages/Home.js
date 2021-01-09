@@ -12,10 +12,6 @@ import Search from '../components/Search';
 import styled from 'styled-components';
 import {useLocation, Link} from 'react-router-dom';
 
-
-
-
-
 function Home() {
   //get the current location
   const location = useLocation();

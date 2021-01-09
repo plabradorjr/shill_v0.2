@@ -7,7 +7,7 @@ const commentsReducer = (state = baseState, action) => {
         case "FETCH_COMMENTS":
             return {
                 ...state,
-                comments: action.payload
+                comments: action.payload.comments
             }
         default:
             return {...state}

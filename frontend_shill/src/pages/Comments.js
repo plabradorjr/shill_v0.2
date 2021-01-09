@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PostComment from '../components/PostComment';
+import ShowComments from '../components/ShowComments';
 
 const Comments = () => {
 
@@ -9,6 +10,7 @@ const Comments = () => {
             <Link to="/">Back to Home</Link>
 
             <PostComment />
+            <ShowComments />
         </div>
     )
 }
