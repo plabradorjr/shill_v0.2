@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        @comment.user = @current_user
+        @comment.username = @current_user.username
         @comment.save
 
     end
