@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import {useLocation} from 'react-router-dom';
+// import { useDispatch } from "react-redux";
 import axios from 'axios';
 //styles
 
 const PostComment = () => {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [textInput, setTextInput] = useState("");
 
     const inputHandler = (e) => {
         setTextInput(e.target.value);
     };
-
 
     const submitSearch = (e) => {
         
@@ -63,7 +61,5 @@ const PostComment = () => {
     )
 
 }
-
-
 
 export default PostComment;

@@ -2,10 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import PostComment from '../components/PostComment';
 
-
-
 const Comments = () => {
-
 
     return (
         <div>
@@ -14,7 +11,6 @@ const Comments = () => {
             <PostComment />
         </div>
     )
-   
 }
 
 export default Comments;

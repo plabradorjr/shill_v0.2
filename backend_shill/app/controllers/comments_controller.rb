@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
                 end
             else
                 render json: {
-                    status: "failed to save comment"
+                    status: "user not logged in"
                 }
             end
     end
