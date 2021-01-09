@@ -15,10 +15,16 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = Comment.new(content: params[:content], name: params[:username], )
+        @comment = Comment.new(comment_params)
+        @comment.user = @current_user
         @comment.save
 
-        render json: { "woot! comment was saved in rails" }
+    end
+
+    private
+
+    def comment_params
+        params.require(:comment).permit(:comment)
     end
 
 end

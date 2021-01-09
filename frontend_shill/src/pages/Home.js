@@ -10,7 +10,7 @@ import NavBar from '../components/NavBar';
 import Search from '../components/Search';
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
-import {useLocation} from 'react-router-dom';
+import {useLocation, Link} from 'react-router-dom';
 
 
 
@@ -25,14 +25,14 @@ function Home() {
 
   useEffect(() => {
     dispatch(loadTrendingCryptos());
-    dispatch(loadAllCoins());
+    if (allCoins.length < 1) dispatch(loadAllCoins());
   },[dispatch]);
 
   const deleteSearch = () => {
     dispatch(deleteSearchResults());
   }
 
-  const trendingCryptoList = useSelector((state) => state.trendingCryptos.trending);
+  const {trending, allCoins} = useSelector((state) => state.trendingCryptos);
 
   return (
       <>
@@ -44,7 +44,7 @@ function Home() {
             <h2 onClick={deleteSearch}>Trending Searches</h2>
             <small className="text-white pb-4">* from CoinGecko API</small>
             <Cryptos >
-              {trendingCryptoList.map((coin) => (
+              {trending.map((coin) => (
                 <div key={coin.item.id}>
                   <Crypto 
                     name={coin.item.name} 
@@ -73,6 +73,9 @@ function Home() {
             <TradingView ticker={"COINBASE:ETHUSD"} />
           </ ChartStyled>
         
+        </div>
+        <div className="row">
+          <Link to="/shills">shills</Link>
         </div>
       </div>
       

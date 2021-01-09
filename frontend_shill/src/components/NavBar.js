@@ -6,11 +6,12 @@ const NavBar = () => {
 
     const dispatch = useDispatch();
     
-    useEffect(() => {
-        dispatch(fetchCurrentUser());
-    },[dispatch]);
-
     const user = useSelector((state) => state.userReducer.currentUser)
+
+    useEffect(() => {
+       if (!user.is_logged) dispatch(fetchCurrentUser());
+    },[dispatch, user.is_logged]);
+
 
     const handleLogoutClick = (e) => {
     
