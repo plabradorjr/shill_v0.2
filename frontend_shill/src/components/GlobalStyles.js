@@ -16,21 +16,28 @@ const GlobalStyles = createGlobalStyle`
     h2{
         font-size: 30px;
         font-family: 'Roboto', sans-serif;
-        color: #f5f6fa;
+        color: #bdc3c7;
     }
     h3{
         font-size: 1rem;
-        color: #f5f6fa;
+        color: #bdc3c7;
         padding: 1.5rem 0rem;
     }
+    h4{
+        color: #bdc3c7;
+    }
     p{
-        font-size: 1rem;
-        line-height: 100%;
-        color: #f5f6fa;
+        font-size: 0.9rem;
+        line-height: 50%;
+        color: #bdc3c7;
     }
     a{
         text-decoration: none;
-        color: #f5f6fa;
+        color: #bdc3c7;
+    }
+    small{
+        color: #bdc3c7;
+
     }
     img{
         display: block;
