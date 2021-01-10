@@ -52,7 +52,7 @@ const Search = () => {
                             aria-describedby="basic-addon2">
                         </input>
                         <div  className="input-group-append">
-                            <button className="btn btn-dark" type="submit" >Search Crypto</button>
+                            <button className="btn btn-warning" type="submit" >Search Crypto</button>
                         </div>
                     </form>
                 </div>
