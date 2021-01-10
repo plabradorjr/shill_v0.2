@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     include CurrentUserConcern
 
     def index
-        @comments = Comment.all
+        @comments = Comment.all.paginate(page: params[:page], per_page: 100).order("created_at DESC")
         render json: @comments, status: 200
     end
 

@@ -11,12 +11,12 @@ const Comments = () => {
         <NavBar />
         <div className="container">
             <div className="row">
-                <ShowComments />
-            </div>
-            <div className="row">
                     <div className="col m-5 p5">
                         <PostComment />
                     </div>
+            </div>
+            <div className="row">
+                <ShowComments />
             </div>
         </div>
         </>
