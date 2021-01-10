@@ -6,11 +6,16 @@ import ShowComments from '../components/ShowComments';
 const Comments = () => {
 
     return (
-        <div>
-            <Link to="/">Back to Home</Link>
-
-            <PostComment />
-            <ShowComments />
+        <div className="container">
+            <div className="row">
+                <Link to="/">Back to Home</Link>
+                <ShowComments />
+                <div className="col-2"></div>
+                <div className="col-8">
+                    <PostComment />
+                </div>
+                <div className="col-2"></div>
+            </div>
         </div>
     )
 }

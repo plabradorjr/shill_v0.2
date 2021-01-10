@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
                 @comment = Comment.new(comment_params)
                 @comment.user = @current_user
                 @comment.username = @current_user.username
+                @comment.image_url = @current_user.image_url
                 if @comment.save
                     render json: {
                         status: "success"
