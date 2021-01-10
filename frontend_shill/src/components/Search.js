@@ -22,7 +22,7 @@ const Search = () => {
         setTextInput(e.target.value);
     };
 
-    const ts = new TrieSearch('name');
+    const ts = new TrieSearch(['name', 'symbol']);
     ts.addAll(allCoins);
 
     const submitSearch = (e) => {
