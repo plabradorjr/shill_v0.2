@@ -36,7 +36,7 @@ const Crypto = ({name, symbol, image_url, id}) => {
 }
 
 const StyledCrypto = styled(motion.div)`
-    box-shadow: 0px 5px 30px rgba(0,0,0,0.2);
+    box-shadow: 1px 5px 5px 2px #f5f5f5;
     text-align: center;
     border-radius: 1rem;
     padding-bottom: 1rem;

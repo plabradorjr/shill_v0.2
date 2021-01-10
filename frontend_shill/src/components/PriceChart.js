@@ -8,21 +8,21 @@ const PriceChart = ({data}) => {
 
 
     const options = {
-    colors: ['#eb2f06',
+    colors: ['#c44569',
             '#0eda63',
             '#14bb46',
-            '#DDDF00', 
+            '#141413', 
             '#24c90f',
             '#64E572',   
             '#1ed461',
             '#FFF263',
-            '#0eda63'],
+            '#14301f'],
     chart: {
         backgroundColor: {
             linearGradient: [0, 0, 500, 500],
             stops: [
-                [0, 'rgb(164, 164, 175)'],
-                [1, 'rgb(164, 164, 175)']
+                [0, 'rgb(141, 141, 150)'],
+                [1, 'rgb(138, 138, 148)']
             ]
         },
     },
@@ -32,10 +32,10 @@ const PriceChart = ({data}) => {
     legend: {
         itemStyle: {
             font: '9pt Trebuchet MS, Verdana, sans-serif',
-            color: 'white'
+            color: 'black'
         },
         itemHoverStyle:{
-            color: 'white'
+            color: 'black'
         }   
     },
     title: {

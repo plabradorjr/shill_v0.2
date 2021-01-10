@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
         /* font-family: 'Montserrat', sans-serif; */
         width: 100%;
         background-color: #1d0464;
-        background-image: linear-gradient(to right top, #161D2E 10%, #393B6E 90%);
+        background-image: linear-gradient(to right top, #161D2E 10%, #15202B 90%);
 
     }
     h2{

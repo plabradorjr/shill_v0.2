@@ -53,7 +53,7 @@ const StyledNav = styled.div`
         cursor: pointer;
     }
     .bgx {
-        background-color: #1C2238;
+        background-color: #192734;
     }
 `
 export default NavBar;
