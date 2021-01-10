@@ -67,7 +67,7 @@ const CardShadow = styled.div`
     width: 100%;
     min-height: 100vh;
     overflow-y: scroll;
-    background: #2f3542;
+    background: #161629;
     position: fixed;
     top: 0;
     left: 0;
@@ -76,7 +76,7 @@ const CardShadow = styled.div`
 
 const CardDetail = styled.div`
 
-    background-color: #1e272e;
+    background-image: linear-gradient(to right top, #192b3b 10%, #363868 90%);
 
 `;
 

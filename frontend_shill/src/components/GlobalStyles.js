@@ -6,21 +6,12 @@ const GlobalStyles = createGlobalStyle`
         padding:0;
         box-sizing: border-box;
     }
-    html{
-        &::-webkit-scrollbar{
-            width: 0.5rem;
-        }
-        &::-webkit-scrollbar-thumb{
-            background-color: darkgrey;
-        }
-        &::-webkit-scrollbar-track {
-    background: white;
-  }
-    }
     body{
         /* font-family: 'Montserrat', sans-serif; */
         width: 100%;
-        background-color: #353b48;
+        background-color: #1d0464;
+        background-image: linear-gradient(to right top, #161D2E 10%, #393B6E 90%);
+
     }
     h2{
         font-size: 30px;

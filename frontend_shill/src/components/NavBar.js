@@ -1,6 +1,11 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser, logoutUser } from '../actions/userActions';
+import styled from 'styled-components';
+import { deleteSearchResults } from '../actions/cryptosAction';
+import { Link } from 'react-router-dom';
+
+
 
 const NavBar = () => {
 
@@ -23,10 +28,14 @@ const NavBar = () => {
         window.location = 'http://localhost:3030/auth/twitter'
     }
 
+    const handleDeleteSearch = () => {
+        dispatch(deleteSearchResults());
+      }
+
     return (
-        <>
-        <nav className="navbar navbar-light bg-dark justify-content-between px-5">
-            <p>✨ Shill.lol ✨</p>
+        <StyledNav>
+        <nav className="navbar navbar-light bgx justify-content-between pt-4 px-5">
+            <Link to="/"> <p id="logo" onClick={handleDeleteSearch}>✨ Shill.lol ✨</p> </Link>
             {user.is_logged && <p>Hello,  {user.name}</p>}
 
             <form className="form-inline">
@@ -35,9 +44,16 @@ const NavBar = () => {
                 
             </form>
         </nav>
-        </>
+        </ StyledNav>
     )
-
 }
 
+const StyledNav = styled.div`
+    #logo {
+        cursor: pointer;
+    }
+    .bgx {
+        background-color: #1C2238;
+    }
+`
 export default NavBar;

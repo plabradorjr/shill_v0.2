@@ -52,11 +52,10 @@ const Search = () => {
                             aria-describedby="basic-addon2">
                         </input>
                         <div  className="input-group-append">
-                            <button className="btn btn-outline-secondary" type="submit" >Search Crypto</button>
+                            <button className="btn btn-dark" type="submit" >Search Crypto</button>
                         </div>
                     </form>
                 </div>
-                
             </div>
             <div className="row">
                 <div className="col">
@@ -81,7 +80,6 @@ const Search = () => {
             </div>
         </div>
     )
-
 }
 
 const CryptoList = styled.div`

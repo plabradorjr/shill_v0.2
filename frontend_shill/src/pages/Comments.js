@@ -1,22 +1,25 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import PostComment from '../components/PostComment';
 import ShowComments from '../components/ShowComments';
+import NavBar from '../components/NavBar';
 
 const Comments = () => {
 
     return (
+        <>
+        <NavBar />
         <div className="container">
             <div className="row">
-                <Link to="/">Back to Home</Link>
                 <ShowComments />
-                <div className="col-2"></div>
-                <div className="col-8">
-                    <PostComment />
-                </div>
-                <div className="col-2"></div>
+            </div>
+            <div className="row">
+                    <div className="col m-5 p5">
+                        <PostComment />
+                    </div>
             </div>
         </div>
+        </>
     )
 }
 
