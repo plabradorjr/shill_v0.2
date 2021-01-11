@@ -12,6 +12,7 @@ import Search from '../components/Search';
 import styled from 'styled-components';
 import {useLocation, Link} from 'react-router-dom';
 import bag from '../images/bag.png'
+import stonks from '../images/stonks.png'
 
 function Home() {
   //get the current location
@@ -29,7 +30,6 @@ function Home() {
   const deleteSearch = () => {
     dispatch(deleteSearchResults());
   }
-
 
   return (
       <>
@@ -103,9 +103,13 @@ function Home() {
             </div>
           </div>
         </div>
+        <img 
+        src={stonks} alt="stonks" 
+        className="mx-auto d-block col-xs/"
+        style={{height: 190}}></img>
+        <p className="text-center" >number only go up</p>
         </div>
       </div>
-      
       </>
   )
 }
