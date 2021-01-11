@@ -10,7 +10,7 @@ const ShowComments = () => {
 
     const dispatch = useDispatch();
     const {comments} = useSelector((state) => state.commentsReducer);
-    const {currentUser} = useSelector((state) => state.userReducer);
+    // const {currentUser} = useSelector((state) => state.userReducer);
 
     useEffect(() => {
         dispatch(fetchComments());
