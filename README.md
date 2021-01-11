@@ -1,17 +1,17 @@
-## this is a Flatiron School Project
+## This is a Flatiron School Project
 # React, Redux, and Rails API
 
-This is a Flatiron School project.
-Front end is using React, Redux, and fetching Coingecko API and Localhost API
-Backend is Rails for proving API and user authentication
+Front end is using React, Redux, and fetching Coingecko API and Localhost API.
+
+Backend is Rails for proving API, storing user submitted data, and user authentication
 
 # Installation
 
-You will need to run two separate servers for front-end and the other for back-end.
+You will need to run two separate servers, one for front-end and one for back-end.
 
 ## Backend
 
-After checking out the repo, run `bundle install` to install dependencies.
+After checking out the repo, cd into backend_shill and run `bundle install` to install dependencies.
 
 run `rails db:migrate`
 
@@ -23,7 +23,7 @@ Next is to run the frontend application.
 
 ## Frontend
 
-run `npm i` to install dependencies.
+cd into frontend_shill and run `npm i` to install dependencies.
 
 then `npm start` to start the server.
 
