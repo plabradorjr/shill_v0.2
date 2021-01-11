@@ -39,7 +39,7 @@ const NavBar = () => {
             {user.is_logged && <p>Hello,  {user.name}</p>}
 
             <form className="form-inline">
-                {user.is_logged && <Link to="/shills"><button className="btn btn-outline-light my-2 mx-2 my-sm-0" type="button">Shills</button></Link>}
+                <Link to="/shills"><button className="btn btn-outline-light my-2 mx-2 my-sm-0" type="button">Shills</button></Link>
                 {user.is_logged && <button className="btn btn-outline-light my-2 my-sm-0" type="button" onClick={handleLogoutClick}>Logout</button>}
                 {!user.is_logged && <button className="btn btn-outline-light my-2 my-sm-0" type="button" onClick={handleLoginClick}>Login via Twitter</button>}
                 

@@ -74,24 +74,32 @@ function Home() {
         <div className="row">
           <div className="col">
             <div className="text-center">
-              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
-                    <button className="btn btn-outline-light">r/wallstreetbets Bags</button>
+              <Link to="/bag/wallstreetbets">
+                <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                <button className="btn btn-outline-light">r/wallstreetbets Bags</button>
+              </Link>
             </div>
           </div>
           <div className="col">
             <div className="text-center">
-              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
-                    <Link to="/bag/chamath"><button className="btn btn-outline-light">Chamath Bags</button></Link>
+              <Link to="/bag/chamath">
+                <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                <button className="btn btn-outline-light">Chamath Bags</button>
+              </Link>
             </div>
           </div><div className="col">
             <div className="text-center">
-              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
-                    <button className="btn btn-outline-light">10X Baggers</button>
+              <Link to="/bag/10x">
+                <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                <button className="btn btn-outline-light">10X Baggers</button>
+              </Link>
             </div>
           </div><div className="col">
             <div className="text-center">
-              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
-                    <button className="btn btn-outline-light">Vaccine Bags</button>
+              <Link to="/bag/global">
+                <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                  <button className="btn btn-outline-light">Global Macro Bags</button>
+              </Link>
             </div>
           </div>
         </div>
