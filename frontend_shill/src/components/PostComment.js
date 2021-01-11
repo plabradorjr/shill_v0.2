@@ -57,7 +57,7 @@ const PostComment = () => {
                             aria-describedby="basic-addon2">
                         </input>
                         <div  className="input-group-append">
-                            <button className="btn btn-warning btn-block" type="submit" >Submit Comment</button>
+                            <button className="btn btn-warning btn-block" type="submit" >Summon a Shill</button>
                         </div>
                     </form>
                 </div>

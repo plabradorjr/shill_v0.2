@@ -11,6 +11,7 @@ import Search from '../components/Search';
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
 import {useLocation, Link} from 'react-router-dom';
+import bag from '../images/bag.png'
 
 function Home() {
   //get the current location
@@ -68,10 +69,32 @@ function Home() {
             <h2>Ethereum</h2>
             <TradingView ticker={"COINBASE:ETHUSD"} />
           </ ChartStyled>
-        
         </div>
+        <div className="container">
         <div className="row">
-          <Link to="/shills">shills</Link>
+          <div className="col">
+            <div className="text-center">
+              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                    <button className="btn btn-outline-light">r/wallstreetbets Bags</button>
+            </div>
+          </div>
+          <div className="col">
+            <div className="text-center">
+              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                    <Link to="/bag/chamath"><button className="btn btn-outline-light">Chamath Bags</button></Link>
+            </div>
+          </div><div className="col">
+            <div className="text-center">
+              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                    <button className="btn btn-outline-light">10X Baggers</button>
+            </div>
+          </div><div className="col">
+            <div className="text-center">
+              <img src={bag} alt="baby yoda" className="mx-auto img-thumbnail/"></img>
+                    <button className="btn btn-outline-light">Vaccine Bags</button>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
       
