@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {fetchComments} from '../actions/commentsAction';
 import { useDispatch } from "react-redux";
-import axios from 'axios';
+// import axios from 'axios';
 //styles
 
 const PostComment = () => {
@@ -16,24 +16,44 @@ const PostComment = () => {
     const handleSubmitClick = (e) => {
         
         if (textInput !== "") {
-            axios
-                .post(
-                    "http://localhost:3030/comments",
-                    {
-                        comment: {
-                            comment: textInput
-                        }
-                    },
-                    { withCredentials: true }
-                )
-                .then(res => {
-                    if (res.data.status === "success") {
-                        console.log("comment went to rails woot")
+
+
+            fetch('http://localhost:3030/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify({
+                    comment: {
+                        comment: textInput
                     }
-                })
-                .catch(err => {
-                    console.log("posting comment error", err)
-                });
+                }),
+                credentials: 'include',
+            })
+            .catch(err => {
+                console.log("posting comment error", err)
+            });
+
+            //note to self, if using axios, syntax is below:
+            // axios
+            //     .post(
+            //         "http://localhost:3030/comments",
+            //         {
+            //             comment: {
+            //                 comment: textInput
+            //             }
+            //         },
+            //         { withCredentials: true }
+            //     )
+            //     .then(res => {
+            //         if (res.data.status === "success") {
+            //             console.log("comment went to rails woot")
+            //         }
+            //     })
+            //     .catch(err => {
+            //         console.log("posting comment error", err)
+            //     });
 
             setTextInput("");
             e.preventDefault();
