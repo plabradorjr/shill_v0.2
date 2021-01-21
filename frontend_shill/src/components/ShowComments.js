@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Component} from 'react';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchComments} from '../actions/commentsAction';
 //COMPONENTS
 //STYLING AND ANIMATIONS
 import styled from 'styled-components';
+import { render } from 'react-dom';
+import Like from './Like'
+
 
 const ShowComments = () => {
 
@@ -14,39 +17,46 @@ const ShowComments = () => {
 
     useEffect(() => {
         dispatch(fetchComments());
-    },[dispatch]);
+	},[dispatch]);
+	
 
-    return (
-        <CommentsStyled>
-            <div className="comments-container">
-                <ul className="comments-list" id="comments-list">
-                    {
-                        comments.map((comment) => (
-                        <li key={comment.id}>
-                            <div className="comment-main-level">
-                                <div className="comment-avatar">
-                                    <img src={comment.image_url ? comment.image_url : "http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg"} alt={comment.username}></img>
-                                </div>
-                                <div className="comment-box">
-                                    <div className="comment-head">
-                                        <h6 className="comment-name by-author"><a href={"https://twitter.com/" + comment.username}>{(comment.username) ? comment.username : "anon"}</a></h6>
-                                        <span>{comment.created_at}</span>
-                                    </div>
-                                    <div className="comment-content">
-                                        {comment.comment}
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </CommentsStyled>
-    )
 
-} 
 
+		return (
+			<CommentsStyled>
+				<div className="comments-container">
+					<ul className="comments-list" id="comments-list">
+						{
+							comments.map((comment) => (
+							<li key={comment.id}>
+								<div className="comment-main-level">
+									<div className="comment-avatar">
+										<img src={comment.image_url ? comment.image_url : "http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg"} alt={comment.username}></img>
+									</div>
+									<div className="comment-box">
+										<div className="comment-head">
+											<h6 className="comment-name by-author"><a href={"https://twitter.com/" + comment.username}>{(comment.username) ? comment.username : "anon"}</a></h6>
+											<span>{comment.created_at}</span>
+										</div>
+										
+										<div className="comment-content">
+											{comment.comment}
+											<div className="justify-content-right">
+												<Like />
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								
+							</li>
+							))
+						}
+					</ul>
+				</div>
+			</CommentsStyled>
+		)
+}
 
 
 const CommentsStyled = styled.div`
