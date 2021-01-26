@@ -15,7 +15,7 @@ After checking out the repo, cd into backend_shill and run `bundle install` to i
 
 run `rails db:migrate`
 
-then `rails s p-3030` to run the rails backend api on `localhost://3030`
+then `rails s -p 3030` to run the rails backend api on `localhost://3030`
 
 You should see JSON response with `status: success`
 
