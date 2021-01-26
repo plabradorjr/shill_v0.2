@@ -12,14 +12,14 @@ class Like extends React.Component {
 
 
     clickHandlerUpVote = () => {
-        this.setState({
-            upVote: this.state.upVote + 1
+        this.setState((state) => {
+            return {upVote: state.upVote + 1}
         });
     };
 
     clickHandlerDownVote = () => {
-        this.setState({
-            downVote: this.state.downVote + 1
+        this.setState((state) => {
+            return {downVote: state.downVote - 1}
         })
     }
     
@@ -32,7 +32,7 @@ class Like extends React.Component {
             </button>
 
             <button onClick={this.clickHandlerDownVote}>
-                Down Vote -{this.state.downVote}
+                Down Vote {this.state.downVote}
             </button>
         </div>
       )
