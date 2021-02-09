@@ -47,6 +47,7 @@ class SessionsController < ApplicationController
 
         if user = User.find_by(:uid => twitter_uid)
             user.update(image_url: twitter_image_url, name: twitter_name, username: twitter_username)
+            user.comments.each { |x| x.update(image_url: twitter_image_url, username: twitter_username) }
             session[:user_id] = user.id 
             # render json: {
             #     status: :created,
