@@ -1,5 +1,6 @@
-## This is a Flatiron School Project
-# React, Redux, and Rails API
+## React, Redux, and Rails API
+
+## Live site: [app.shill.lol](https://app.shill.lol)
 
 Front end is using React, Redux, and fetching Coingecko API and Localhost API.
 
